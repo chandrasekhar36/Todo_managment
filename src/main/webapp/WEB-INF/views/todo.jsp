@@ -2,7 +2,7 @@
 <%@include file="../common/navigation.jspf"%>
 <div class="container">
 	<H1>Todos</H1>
-	<p>Hey, ${name}, you have following to catch up</p>
+	<b><p>Hey ${name}, you have following to catch up</p></b>
 	<table class="table table-striped">
 		<thead>
 			<tr>

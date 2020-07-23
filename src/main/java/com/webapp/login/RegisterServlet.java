@@ -35,9 +35,10 @@ protected void doPost(HttpServletRequest request,HttpServletResponse response)th
 		
 		if(isvalid) {
 			//System.out.print(name);
-			InsertDocument in=new InsertDocument();
-			if(in.insertDataUser(new User(fname,lname,mail,pwd))) {
+			
+			if(InsertDocument.insertDataUser(new User(fname,lname,mail,pwd))) {
 				request.getSession().setAttribute("name",fname);
+				request.getSession().setAttribute("mail",mail);
 				response.sendRedirect("/list-todo.do");
 			}
 			else {

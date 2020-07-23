@@ -44,8 +44,7 @@ public class TodoService {
 	
 	public void addTodo(Todo x, String s) {
 		
-		InsertDocument in =new InsertDocument();
-		if(in.insertDataTodo(x, s)) {
+		if(InsertDocument.insertDataTodo(x, s)) {
 			System.out.print("Todo added");
 		}
 		
