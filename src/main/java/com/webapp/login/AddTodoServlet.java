@@ -16,9 +16,8 @@ import org.bson.Document;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
-
-import webapp.todo.Todo;
-import webapp.todo.TodoService;
+import com.webapp.todo.Todo;
+import com.webapp.todo.TodoService;
 
 
 @WebServlet(urlPatterns="/add-todo.do")

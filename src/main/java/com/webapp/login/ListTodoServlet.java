@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import webapp.todo.Todo;
-import webapp.todo.TodoService;
+import com.webapp.todo.Todo;
+import com.webapp.todo.TodoService;
 
 
 @WebServlet(urlPatterns="/list-todo.do")

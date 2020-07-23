@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import webapp.todo.TodoService;
+import com.webapp.todo.TodoService;
 
 
 @WebServlet(urlPatterns="/register.do")
