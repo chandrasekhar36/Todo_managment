@@ -14,8 +14,8 @@ import com.mongodb.MongoClientURI;
 
 public class InsertDocument {
 
-	//public static MongoClientURI uri = new MongoClientURI("mongodb+srv://admin:admin@cluster0.wrvu8.gcp.mongodb.net/todo-management?retryWrites=true&w=majority");
-	public static MongoClient mongo = new MongoClient("localhost",27017);
+	public static MongoClientURI uri = new MongoClientURI("mongodb+srv://admin:admin@cluster0.wrvu8.gcp.mongodb.net/todo-management?retryWrites=true&w=majority");
+	public static MongoClient mongo = new MongoClient(uri);
 	public static MongoDatabase database = mongo.getDatabase("todo-management");
 	public static MongoCollection<Document> collection_user = database.getCollection("user");
 	public static MongoCollection<Document> collection_todo = database.getCollection("todo");

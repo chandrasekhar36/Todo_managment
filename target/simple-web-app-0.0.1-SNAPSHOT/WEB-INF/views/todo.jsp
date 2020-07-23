@@ -1,62 +1,35 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Todos</title>
-<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-	rel="stylesheet">
-
-<style>
-	.footer {
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		height: 60px;
-		background-color: #f5f5f5;
-	}
-</style>
-</head>
-
-<body>
-
-	<nav class="navbar navbar-default">
-
-		<a href="/" class="navbar-brand">Brand</a>
-
-		<ul class="nav navbar-nav">
-			<li><a href="/home.do">Home</a></li>
-			<li  class="active"><a href="#">Todos</a></li>
-		</ul>
-
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/logout.do">Log out</a></li>
-		</ul>
-
-	</nav>
-
-	<div class="container">
-		<H1>Todos</H1>
-		<p>Hey, ${name}, you have following to catch up</p>
-		<ol>
+<%@include file="../common/header.jspf"%>
+<%@include file="../common/navigation.jspf"%>
+<div class="container">
+	<H1>Todos</H1>
+	<b><p>Hey ${name}, you have following to catch up</p></b>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Category</th>
+				<th>Description</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
 			<c:forEach items="${todos}" var="todo">
-			<li>${todo.name} &nbsp;&nbsp;&nbsp;<a href="/delete-todo.do?todo=${todo.name}">Delete</a></li>
+				<tr>
+					<td>${todo.category}</td>
+					<td>${todo.name}</td>
+					<td><a class="btn btn-danger"
+						href="/delete-todo.do?id=${todo.id}">Delete</a></td>
+				</tr>
 			</c:forEach>
-		</ol>
-		
-		<p>Want to Add new one ?</p>
-		<form action="/add-todo.do" method="post">
-			<input type="text" name="newtodo"/>
-			<input type="submit" value="Add todo"/>
-		</form>
-	</div>
+		</tbody>
 
-	<footer class="footer">
-		<p>&copy All copyrights reserved</p>
-	</footer>
+	</table>
 
-	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<ol>
 
-</body>
+	</ol>
 
-</html>
+	<p>
+		<a href="/add-todo.do">Add todo Here</a>
+	</p>
+</div>
+<%@include file="../common/footer.jspf"%>
